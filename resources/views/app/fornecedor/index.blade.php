@@ -2,20 +2,29 @@
 
 @php
     /*
-    if  (<!condicao>) {} // enquanto executa se o retorno for true
+    if (empty($variavel)) {} // retornar true se a variável estiver vazia
+    - ''
+    - 0
+    - 0.0
+    - '0'
+    - null
+    - false
+    - array()
+    - $var
     */
 @endphp
 
-Fornecedor: {{ $fornecedores[0]['nome'] }}
-<br>
-Status: {{ $fornecedores[0]['status'] }}
-<br>
-@if ( $fornecedores[0]['status'] !== 'S' )
-    Fornecedor inativo
-@endif
-<br>
-@unless ($fornecedores[0]['status'] == 'S') <!-- Se o retorno da condição for false -->
-    Fornecedor inativo
-@endunless
+@isset ($fornecedores)
 
-{{-- @unless executa se o retorno for false --}}
+    @foreach ($fornecedores as $indice => $fornecedor)
+         Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não foi preenchido' }}
+        <br>
+        Telefone: ({{ $fornecedor['ddd'] ?? '' }}) ({{ $fornecedor['telefone'] ?? '' }})
+        <hr>
+    @endforeach
+
+@endisset
