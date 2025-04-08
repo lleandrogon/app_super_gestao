@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class FornecedoresController extends Controller
+class HomeController extends Controller
 {
     public function index() {
-        return view('app.fornecedor');
+        return view('app.home');
     }
 }
