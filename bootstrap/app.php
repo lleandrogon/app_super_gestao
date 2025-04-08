@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AutenticacaoMiddleware;
 use App\Http\Middleware\LogAcessoMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -14,11 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //Para registrar o middleware para todas as rotas web
-        //$middleware->group('web', [LogAcessoMiddleware::class]);
+        $middleware->group('web', [LogAcessoMiddleware::class]);
 
         //Para registrar o nome para um middleware
         $middleware->alias([
-            'log.acesso' => LogAcessoMiddleware::class
+            'autenticacao' => AutenticacaoMiddleware::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
