@@ -31,6 +31,12 @@ Route::prefix('/app')->middleware('autenticacao:padrao, visitante, p3, p4')->gro
 
     Route::get('/fornecedor', [FornecedoresController::class, 'index'])->name('app.fornecedor');
 
+    Route::post('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
+
+    Route::get('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar');
+
+    Route::post('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar');
+
     Route::get('/produto', [ProdutoController::class, 'index'])->name('app.produto');
 });
 
