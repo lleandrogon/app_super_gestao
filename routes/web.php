@@ -31,11 +31,15 @@ Route::prefix('/app')->middleware('autenticacao:padrao, visitante, p3, p4')->gro
 
     Route::get('/fornecedor', [FornecedoresController::class, 'index'])->name('app.fornecedor');
 
+    Route::get('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
+
     Route::post('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
 
     Route::get('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar');
 
     Route::post('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar');
+
+    Route::get('/fornecedor/editar/{id}/{msg?}', [FornecedoresController::class, 'editar'])->name('app.fornecedor.editar');
 
     Route::get('/produto', [ProdutoController::class, 'index'])->name('app.produto');
 });
