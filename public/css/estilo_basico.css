@@ -194,3 +194,35 @@ button:hover {
 .redes-sociais img {
     margin: 0px 15px 0px 15px;
 }
+
+[aria-label="Pagination Navigation"] {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  [aria-label="Pagination Navigation"] ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  [aria-label="Pagination Navigation"] li {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  [aria-label="Pagination Navigation"] li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  [aria-label="Pagination Navigation"] li.active span {
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }

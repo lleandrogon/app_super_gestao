@@ -34,6 +34,7 @@ Route::prefix('/app')->middleware('autenticacao:padrao, visitante, p3, p4')->gro
     Route::get('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
 
     Route::post('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
+    Route::get('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
 
     Route::get('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar');
 
@@ -41,7 +42,10 @@ Route::prefix('/app')->middleware('autenticacao:padrao, visitante, p3, p4')->gro
 
     Route::get('/fornecedor/editar/{id}/{msg?}', [FornecedoresController::class, 'editar'])->name('app.fornecedor.editar');
 
-    Route::get('/produto', [ProdutoController::class, 'index'])->name('app.produto');
+    Route::get('/fornecedor/exluir/{id}', [FornecedoresController::class, 'excluir'])->name('app.fornecedor.excluir');
+
+    //produtos
+    Route::resource('produto', ProdutoController::class);
 });
 
 Route::get('/teste/{p1}/{p2}', [TesteController::class, 'teste'])->name('teste');
