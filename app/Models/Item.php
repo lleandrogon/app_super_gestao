@@ -12,4 +12,8 @@ class Item extends Model
     public function itemDetalhe() {
         return $this->hasOne(ItemDetalhe::class, 'produto_id', 'id');
     }
+
+    public function fornecedor() {
+        return $this->belongsTo(Fornecedor::class);
+    }
 }

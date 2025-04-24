@@ -11,7 +11,5 @@ class ItemDetalhe extends Model
 
     public function item() {
         return $this->belongsTo(Item::class, 'produto_id', 'id');
-
-        //fk item_id
     }
 }
